@@ -53,7 +53,7 @@ const AddDeleteParticipant = (props) => {
   function handleAddSubmit(e) {
     e.preventDefault();
     const password =
-      "0x" + Math.floor(Math.random() * (1000000 + 1)).toString(16);
+      "0x" + Math.floor(Math.random() * (100000 + 1)).toString(16);
     try {
       Axios.post("/regparticipant", {
         id: parseInt(data.id),
