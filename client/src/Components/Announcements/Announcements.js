@@ -130,7 +130,7 @@ const Announcements = (props) => {
           <span>message</span>
           <span>timestamp</span>
           {items.map((item, index) => (
-            <div key="index">
+            <div key={index}>
               <span>{item.id}</span>
               <span>{item.message}</span>
               <span>{item.timestamp}</span>

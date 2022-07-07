@@ -1,10 +1,10 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Announcements from "./Components/Announcements/Announcements";
 import AddDeleteParticipant from "./Components/RegisteredParticipants/AddDeleteParticipant.js";
 import Nav from "./Components/Navigation/Nav";
+import Login from "./Components/Login/Login";
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
             path="registeredparticipants"
             element={<AddDeleteParticipant />}
           />
+          <Route path="login" element={<Login />} />
         </Route>
       </Routes>
     </BrowserRouter>
