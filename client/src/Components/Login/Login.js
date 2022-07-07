@@ -2,24 +2,24 @@ import React from "react";
 import Axios from "axios";
 
 const Login = (props) => {
-  const [cred, setCred] = React.useState({
+  const [credentials, setCredentials] = React.useState({
     username: "",
     password: "",
   });
   const [auth, setAuth] = React.useState(false);
 
   function handleChange(e) {
-    const newCred = { ...cred };
-    newCred[e.target.id] = e.target.value;
-    setCred(newCred);
+    const newCredentials = { ...credentials };
+    newCredentials[e.target.id] = e.target.value;
+    setCredentials(newCredentials);
   }
 
   function handleLogin(e) {
     e.preventDefault();
     try {
       Axios.post("/login", {
-        username: cred.username,
-        password: cred.password,
+        username: credentials.username,
+        password: credentials.password,
       }).then((res) => {
         setAuth(res.data.result);
       });
@@ -34,14 +34,14 @@ const Login = (props) => {
         <input
           onChange={(e) => handleChange(e)}
           id="username"
-          value={cred.username}
+          value={credentials.username}
           placeholder="username"
           type="text"
         ></input>
         <input
           onChange={(e) => handleChange(e)}
           id="password"
-          value={cred.password}
+          value={credentials.password}
           placeholder="password"
           type="text"
         ></input>
