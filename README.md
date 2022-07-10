@@ -1,6 +1,6 @@
 # Maryland Masti Organizer Site Development Prototype
 
-# About
+## About
 
 This is a web application that uses DynamoDB, ExpressJS, ReactJS, and NodeJS.
 Currently the feature set only includes CRUD functionality, working with 2 NoSQL databases to store and read data from.
@@ -8,6 +8,10 @@ Currently the feature set only includes CRUD functionality, working with 2 NoSQL
 ## Purpose
 
 This project is a development prototype as part of a larger project for UMD's Maryland Masti, a student led organization that organizes and hosts an annual dance competition. Organizers are given access to a website that will allow them to manually add, delete, or update participant data and add announcements that will eventually be view by the dance teams.
+
+<br/>
+<br/>
+<br/>
 
 # Getting Started with Create React App
 
