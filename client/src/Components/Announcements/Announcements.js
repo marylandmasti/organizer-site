@@ -60,15 +60,22 @@ const Announcements = (props) => {
 
     const date = new Date();
     let currTime = date.getHours();
+    let currMin = date.getMinutes();
+
+    if (parseInt(currMin) < 10) {
+      console.log("dfsf");
+      currMin = "0" + currMin;
+    }
+
     if (parseInt(currTime) === 0) {
-      currTime =
-        (parseInt(currTime) + 12).toString() + ":" + date.getMinutes() + "AM";
+      currTime = (parseInt(currTime) + 12).toString() + ":" + currMin + "AM";
     } else if (parseInt(currTime) < 12) {
       currTime = currTime + ":" + date.getMinutes() + "AM";
     } else {
-      currTime =
-        (parseInt(currTime) - 12).toString() + ":" + date.getMinutes() + "PM";
+      currTime = (parseInt(currTime) - 12).toString() + ":" + currMin + "PM";
     }
+    currTime =
+      parseInt(date.getMonth()) + 1 + "/" + date.getDate() + " " + currTime;
 
     console.log(currTime);
     try {
