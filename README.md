@@ -39,11 +39,18 @@ Clone the repository to get access to this code on your local machine.
 
 This installs all the necessary packages and creates a node_modules folder at the root.
 
-#### `cd client`
-
-#### `npm i`
+#### `cd client` <br/> `npm i`
 
 This installs all the necessary packages for the client side application.
+
+#### `npm start`
+
+From the client subdirectory, this will allow you to see live changes to the front end code directly on your machine.
+
+#### `npm start`
+
+From a new terminal and at the root, this runs the server side code allowing the front end to make functioning calls to the apis.
+Note: Now you have 2 terminals running, one in the client subdirectory and the other at the root. You are now able to begin making changes to the code.
 
 <br/>
 <br/>
