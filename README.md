@@ -1,3 +1,5 @@
+Important: This just a development prototype to explore CRUD functionality with AWS. Code for the legitimate build will be available on the Maryland Masti GitHub.
+
 # Maryland Masti Organizer Site Development Prototype
 
 ## About
@@ -26,6 +28,22 @@ Upcoming:
 - Automatically add id when adding to database
 - CRUD operations for individual team schedules
 - Add data from a QR code to database of checked in participants
+
+## Documentation
+
+#### `git clone https://github.com/kchinna/organizer-site.git`
+
+Clone the repository to get access to this code on your local machine.
+
+#### `npm i`
+
+This installs all the necessary packages and creates a node_modules folder at the root.
+
+#### `cd client`
+
+#### `npm i`
+
+This installs all the necessary packages for the client side application.
 
 <br/>
 <br/>
