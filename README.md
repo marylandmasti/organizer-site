@@ -9,6 +9,22 @@ Currently the feature set only includes CRUD functionality, working with 2 NoSQL
 
 This project is a development prototype as part of a larger project for UMD's Maryland Masti, a student led organization that organizes and hosts an annual dance competition. Organizers are given access to a website that will allow them to manually add, delete, or update participant data and add announcements that will eventually be view by the dance teams.
 
+## Progress
+
+Completed:
+
+- CRUD operations for announcements
+- CRUD operations for registered participants
+
+In Progress:
+
+- Login system
+
+Upcoming:
+
+- CRUD operations for individual team schedules
+- Add data from a QR code to database of checked in participants
+
 <br/>
 <br/>
 <br/>
