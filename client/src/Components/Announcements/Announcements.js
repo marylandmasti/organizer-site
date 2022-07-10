@@ -15,6 +15,7 @@ const Announcements = (props) => {
   });
 
   const compareFunction = (a, b) => {
+    console.log(a.timestamp, b.timestamp);
     if (a.timestamp >= b.timestamp) {
       return -1;
     }

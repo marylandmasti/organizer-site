@@ -19,9 +19,11 @@ Completed:
 In Progress:
 
 - Login system
+- Sorting announcements
 
 Upcoming:
 
+- Automatically add id when adding to database
 - CRUD operations for individual team schedules
 - Add data from a QR code to database of checked in participants
 
