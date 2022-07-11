@@ -31,6 +31,10 @@ Upcoming:
 
 ## Documentation
 
+### Setting Up AWS
+
+### Setting Up Code
+
 #### `git clone https://github.com/kchinna/organizer-site.git`
 
 Clone the repository to get access to this code on your local machine.
@@ -38,6 +42,15 @@ Clone the repository to get access to this code on your local machine.
 #### `npm i`
 
 This installs all the necessary packages and creates a node_modules folder at the root.
+
+#### `touch .env`
+
+Create a .env file and populate with the following fields,
+
+- AWS_ACCESS_KEY_ID="AWS user access key"
+- AWS_SECRET_ACCESS_KEY="AWS user secret access key"
+- REG_TABLE="table name for registered participants"
+- ANNOUNCE_TABLE="table name for announcements"
 
 #### `cd client` <br/> `npm i`
 
