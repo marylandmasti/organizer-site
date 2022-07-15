@@ -1,28 +1,38 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
 import Announcements from "./Components/Announcements/Announcements";
 import AddDeleteParticipant from "./Components/RegisteredParticipants/AddDeleteParticipant.js";
 import Nav from "./Components/Navigation/Nav";
 import Login from "./Components/Login/Login";
-import { AuthProvider } from "./Utils/auth";
+import Auth from "./Components/Auth";
 
 function App() {
+  const [user, setUser] = React.useState(null);
+
   return (
-    <AuthProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Nav />}>
-            <Route index element={<Announcements />} />
+    <BrowserRouter>
+      <Routes>
+        {console.log(user)}
+        <Route path="/" element={<Nav />}>
+          {user && <Route index element={<Announcements />} />}
+          {!user && (
+            <Route
+              path="login"
+              element={<Auth authenticate={() => setUser(true)} />}
+            />
+          )}
+          {user && (
             <Route
               path="registeredparticipants"
               element={<AddDeleteParticipant />}
             />
-            <Route path="login" element={<Login />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </AuthProvider>
+          )}
+          <Route path="/" element={<Navigate to={user ? "/" : "/login"} />} />
+          <Route path="*" element={<Navigate to={user ? "/" : "/login"} />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
