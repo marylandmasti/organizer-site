@@ -122,20 +122,6 @@ app.get("/announcement", async (req, res) => {
 
 // LOGIN
 
-// const loginState = false;
-
-// app.post("/login", async (req, res) => {
-//   if (
-//     (req.body.username === "masti@gmail.com") &
-//     (req.body.password === "123")
-//   ) {
-//     loginState = true;
-//     return res.send({ result: true });
-//   }
-//   loginState = false;
-//   return res.send({ result: false });
-// });
-
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
 });

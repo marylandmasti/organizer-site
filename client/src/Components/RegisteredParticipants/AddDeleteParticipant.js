@@ -43,7 +43,6 @@ const AddDeleteParticipant = (props) => {
     try {
       Axios.delete(endpoint).then((res) => {
         handleRead();
-        console.log(res.data);
       });
     } catch (error) {
       console.log(error);
@@ -63,7 +62,6 @@ const AddDeleteParticipant = (props) => {
         password: password,
       }).then((res) => {
         handleRead();
-        console.log(res.data);
       });
     } catch (error) {
       console.log(error);

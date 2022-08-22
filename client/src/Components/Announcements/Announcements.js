@@ -3,7 +3,7 @@ import Axios from "axios";
 
 const Announcements = (props) => {
   const [data, setData] = React.useState({
-    id: undefined,
+    id: null,
     message: "",
     timestamp: "",
   });
@@ -15,7 +15,6 @@ const Announcements = (props) => {
   });
 
   const compareFunction = (a, b) => {
-    console.log(a.timestamp, b.timestamp);
     if (a.timestamp >= b.timestamp) {
       return -1;
     }
@@ -49,7 +48,6 @@ const Announcements = (props) => {
     try {
       Axios.delete(endpoint).then((res) => {
         handleRead();
-        console.log(res.data);
       });
     } catch (error) {
       console.log(error);
@@ -64,7 +62,6 @@ const Announcements = (props) => {
     let currMin = date.getMinutes();
 
     if (parseInt(currMin) < 10) {
-      console.log("dfsf");
       currMin = "0" + currMin;
     }
 
@@ -86,7 +83,6 @@ const Announcements = (props) => {
         timestamp: currTime,
       }).then((res) => {
         handleRead();
-        console.log(res.data);
       });
     } catch (error) {
       console.log(error);

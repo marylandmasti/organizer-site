@@ -4,11 +4,11 @@ import "./App.css";
 import Announcements from "./Components/Announcements/Announcements";
 import AddDeleteParticipant from "./Components/RegisteredParticipants/AddDeleteParticipant.js";
 import Nav from "./Components/Navigation/Nav";
-import Login from "./Components/Login/Login";
 import Auth from "./Components/Auth";
 
 function App() {
   const [user, setUser] = React.useState(null);
+  console.log("hi", process.env.PASSWORD);
 
   return (
     <BrowserRouter>
