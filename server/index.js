@@ -69,7 +69,12 @@ app.use(bodyParser.json());
 // WILL TARGET THE REGISTERED USERS DATABASE
 
 app.post("/regparticipant", async (req, res) => {
-  const { success, data } = await addItem(req.body, REG_TABLE_NAME);
+  // const item = {
+  //   email: req.body.email,
+  //   name: req.body.first_name,
+  //   timestamp: new Date().toISOString()
+  // };
+  const { success, data } = await addItem(item, REG_TABLE_NAME);
   if (success) {
     return res.json({ success, data });
   }
@@ -238,21 +243,6 @@ app.get('/schedule', async (req, res) => {
   return res.status(500).json({ success: false, message: "Error Occured !!!" });
 });
 
-// LOGIN
-
-// const loginState = false;
-
-// app.post("/login", async (req, res) => {
-//   if (
-//     (req.body.username === "masti@gmail.com") &
-//     (req.body.password === "123")
-//   ) {
-//     loginState = true;
-//     return res.send({ result: true });
-//   }
-//   loginState = false;
-//   return res.send({ result: false });
-// });
 
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
