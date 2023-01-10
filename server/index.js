@@ -243,6 +243,10 @@ app.get('/schedule', async (req, res) => {
   return res.status(500).json({ success: false, message: "Error Occured !!!" });
 });
 
+<<<<<<< HEAD
+=======
+// LOGIN
+>>>>>>> c2d8ac2911287d0f2adb4dd4d4390b297af004d9
 
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);

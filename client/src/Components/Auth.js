@@ -1,17 +1,46 @@
+import Axios from "axios";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import App from "../App";
 
 const Auth = ({ authenticate }) => {
   const navigate = useNavigate();
-  const onClick = () => {
+  const [credentials, setCredentials] = React.useState({
+    username: "",
+    password: "",
+  });
+
+  const handleLogin = (e) => {
+    e.preventDefault();
     authenticate();
     navigate("");
-    console.log(App.user);
   };
+
+  const handleChange = (e) => {
+    const newCredentials = { ...credentials };
+    newCredentials[e.target.id] = e.target.value;
+    setCredentials(newCredentials);
+  };
+
   return (
     <div>
-      <button onClick={onClick}>Authenticate</button>
+      <form>
+        <input
+          onChange={(e) => handleChange(e)}
+          id="username"
+          value={credentials.username}
+          placeholder="username"
+          type="text"
+        ></input>
+        <input
+          onChange={(e) => handleChange(e)}
+          id="password"
+          value={credentials.password}
+          placeholder="password"
+          type="text"
+        ></input>
+        <button onClick={(e) => handleLogin(e)}>Authenticate</button>
+      </form>
     </div>
   );
 };

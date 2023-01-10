@@ -3,7 +3,7 @@ import Axios from "axios";
 
 const Announcements = (props) => {
   const [data, setData] = React.useState({
-    id: undefined,
+    id: null,
     message: "",
     timestamp: "",
   });
@@ -14,6 +14,16 @@ const Announcements = (props) => {
     handleRead();
   });
 
+<<<<<<< HEAD
+=======
+  const compareFunction = (a, b) => {
+    if (a.timestamp >= b.timestamp) {
+      return -1;
+    }
+    return 1;
+  };
+
+>>>>>>> c2d8ac2911287d0f2adb4dd4d4390b297af004d9
   const handleRead = () => {
     try {
       Axios.get("/announcement").then((res) => {
@@ -41,7 +51,6 @@ const Announcements = (props) => {
     try {
       Axios.delete(endpoint).then((res) => {
         handleRead();
-        console.log(res.data);
       });
     } catch (error) {
       console.log(error);
@@ -51,12 +60,33 @@ const Announcements = (props) => {
   function handleAddSubmit(e) {
     e.preventDefault();
 
+<<<<<<< HEAD
+=======
+    const date = new Date();
+    let currTime = date.getHours();
+    let currMin = date.getMinutes();
+
+    if (parseInt(currMin) < 10) {
+      currMin = "0" + currMin;
+    }
+
+    if (parseInt(currTime) === 0) {
+      currTime = (parseInt(currTime) + 12).toString() + ":" + currMin + "AM";
+    } else if (parseInt(currTime) < 12) {
+      currTime = currTime + ":" + date.getMinutes() + "AM";
+    } else {
+      currTime = (parseInt(currTime) - 12).toString() + ":" + currMin + "PM";
+    }
+    currTime =
+      parseInt(date.getMonth()) + 1 + "/" + date.getDate() + " " + currTime;
+
+    console.log(currTime);
+>>>>>>> c2d8ac2911287d0f2adb4dd4d4390b297af004d9
     try {
       Axios.post("/announcement", {
         message: data.message,
       }).then((res) => {
         handleRead();
-        console.log(res.data);
       });
     } catch (error) {
       console.log(error);
