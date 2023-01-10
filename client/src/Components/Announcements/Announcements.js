@@ -14,18 +14,10 @@ const Announcements = (props) => {
     handleRead();
   });
 
-  const compareFunction = (a, b) => {
-    console.log(a.timestamp, b.timestamp);
-    if (a.timestamp >= b.timestamp) {
-      return -1;
-    }
-    return 1;
-  };
-
   const handleRead = () => {
     try {
       Axios.get("/announcement").then((res) => {
-        setItems(res.data.data.sort(compareFunction));
+        setItems(res.data);
       });
     } catch (error) {
       console.log(error);
@@ -59,31 +51,9 @@ const Announcements = (props) => {
   function handleAddSubmit(e) {
     e.preventDefault();
 
-    const date = new Date();
-    let currTime = date.getHours();
-    let currMin = date.getMinutes();
-
-    if (parseInt(currMin) < 10) {
-      console.log("dfsf");
-      currMin = "0" + currMin;
-    }
-
-    if (parseInt(currTime) === 0) {
-      currTime = (parseInt(currTime) + 12).toString() + ":" + currMin + "AM";
-    } else if (parseInt(currTime) < 12) {
-      currTime = currTime + ":" + date.getMinutes() + "AM";
-    } else {
-      currTime = (parseInt(currTime) - 12).toString() + ":" + currMin + "PM";
-    }
-    currTime =
-      parseInt(date.getMonth()) + 1 + "/" + date.getDate() + " " + currTime;
-
-    console.log(currTime);
     try {
       Axios.post("/announcement", {
-        id: parseInt(data.id),
         message: data.message,
-        timestamp: currTime,
       }).then((res) => {
         handleRead();
         console.log(res.data);

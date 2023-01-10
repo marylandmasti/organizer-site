@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
 import Announcements from "./Components/Announcements/Announcements";
@@ -8,7 +8,7 @@ import Login from "./Components/Login/Login";
 import Auth from "./Components/Auth";
 
 function App() {
-  const [user, setUser] = React.useState(null);
+  const [user, setUser] = useState(null);
 
   return (
     <BrowserRouter>
